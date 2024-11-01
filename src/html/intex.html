@@ -9,36 +9,46 @@
 </head>
 <body>
     <main class="container">
-        <h1 class="title">Cadastro</h1>
-        <div class="row">
-            <div class="inputbox">
-                <input type="text" id="nome" required>
-                <label for="nome">Nome</label>
-            </div>
-            <div class="inputbox">
-                <input type="text" id="email"  required>
-                <label for="email">Email</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="inputbox">
-                <input type="text" id="esporte"  required>
-                <label for="esporte">Esporte</label>
-            </div>
-       
-          
-            <div class="inputbox">
-                <input type="text" id="cidade"  required>
-                <label for="cidade">Cidade</label>
-            </div>
-            <div class="inputbox">
-                
-                <input type="text" id="idade"  required>
-                <label for="idade">Idade</label>
-            </div>
-            <div class="row">
-                <button id="btn">Salvar</button>
-            </div>
+        <form id="formulario">
+            <selecion id="formulario">
+                <h1 class="title">Cadastro</h1>
+                <div class="row">
+                    <div class="inputbox">
+                        <input type="text" id="nome" required>
+                        <label for="nome">Nome</label>
+                    </div>
+                    <div class="inputbox">
+                        <input type="text" id="email"  required>
+                        <label for="email">Email</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="inputbox">
+                        <input type="text" id="esporte"  required>
+                        <label for="esporte">Esporte</label>
+                    </div>
+            
+                    <div class="inputbox">
+                        <input type="text" id="mostro"  required>
+                        <label for="mostro">Mostro</label>
+                    </div>
+                    <div class="inputbox">
+            
+                        <input type="text" id="idade"  required>
+                        <label for="idade">Idade</label>
+                    </div>
+                    <div class="row">
+                        <button id="btn" onclick="cadastrarMostro()">Salvar</button>
+                    </div>
+            </selecion>
+        </form>
+        <footer >
+<section id="saida">
+
+</section>
+
+        </footer>
     </main>
+    <script src="../js/script.js"></script>
 </body>
 </html>
