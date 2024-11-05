@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="teste.css">
+    <link rel="shortcut icon" href="../img/monster-svgrepo-com.svg" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="logo" href="/">Record Monster
+            </a>
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-list">
+                <li><a href="https://www.linkedin.com/in/odilon-de-campos-742a202a0/">linkedin</a></li>
+                <li><a href="../html/sobre.html">Sobre</a></li>
+                <li><a href="https://github.com/odilonskt">GitHub</a></li>
+                <li><a href="https://github.com/odilonskt/CRUD-M2">Repositorio</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <form id="formulario">
+            <section>
+                <h1 class="title">Cadastro</h1>
+                <div class="row">
+                    <div class="inputbox">
+                        <input id="nome" required type="text">
+                        <label for="nome">Nome:</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="inputbox">
+                        <input type="text" id="esporte" required>
+                        <label for="esporte">Esporte:</label>
+                    </div>
+                    <div class="inputbox">
+                        <input type="text" id="mostro" required>
+                        <label for="mostro">Monstro:</label>
+                    </div>
+                    <div class="inputbox">
+                        <input type="number" id="idade" required>
+                        <label for="idade">Idade:</label>
+                    </div>
+                    <div class="inputbox">
+                        <input type="tel" id="numero" required>
+                        <label for="numero">Número: (XX)XXXX-XXXX</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <button id="btn" type="button" >Salvar</button>
+                </div>
+            </section>
+            <section id="saida">
+            </section>
+        </form>
+    </main>
+    <footer>
+        <p>&copy;Odilon de Campos</p>
+    </footer>
+    <script src="../js/mobile-navbar.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>

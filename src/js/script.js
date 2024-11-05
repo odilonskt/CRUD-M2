@@ -1,11 +1,12 @@
 // Classe para representar o Usuário
 class MonsterClass {
-    constructor(nome, email, esporte, mostro, idade) {
+    constructor(nome,  esporte, mostro, idade,numero) {
         this.nome = nome;
-        this.email = email;
+        
         this.esporte = esporte;
         this.mostro = mostro;
         this.idade = idade;
+        this.numero= numero
     }
 }
 
@@ -15,21 +16,20 @@ let registros = [];
 // Função para cadastrar um novo monstro
 function cadastrarMostro() {
     const nome = document.getElementById('nome').value;
-    const email = document.getElementById('email').value;
+
     const esporte = document.getElementById('esporte').value;
     const mostro = document.getElementById('mostro').value;
     const idade = document.getElementById('idade').value;
+    const numero = document.getElementById('numero').value;
 
-    if (nome && email && esporte && mostro && idade) {
+    if (nome && esporte && mostro && idade && numero) {
         // Cria um novo objeto Monster e adiciona ao array
-        const monster = new MonsterClass(nome, email, esporte, mostro, idade);
+        const monster = new MonsterClass(nome,  esporte, mostro, idade,numero);
         registros.push(monster);
         exibirRegistros();
         // Limpa o formulário
         document.getElementById('formulario').reset();
-    } else {
-        alert("BUHH!!!!");
-    }
+    } 
 }
 
 // Função para exibir os registros na seção de saída
@@ -37,17 +37,33 @@ function exibirRegistros() {
     const saida = document.getElementById('saida');
     saida.innerHTML = `
         <h3>Registros de Monstros</h3>
-        ${registros.map((registro, index) => `
-            <div class="registro">
-                <p>Nome: ${registro.nome}</p>
-                <p>Email: ${registro.email}</p>
-                <p>Esporte: ${registro.esporte}</p>
-                <p>Monstro: ${registro.mostro}</p>
-                <p>Idade: ${registro.idade}</p>
-                <button onclick="editarRegistros(${index})">Editar</button>
-                <button onclick="excluirRegistros(${index})">Excluir</button>
-            </div>
-        `).join('')}
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Esporte</th>
+                    <th>Monstro</th>
+                    <th>Idade</th>
+                    <th>Número</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                ${registros.map((registro, index) => `
+                    <tr class="registro">
+                        <td>${registro.nome}</td>
+                        <td>${registro.esporte}</td>
+                        <td>${registro.mostro}</td>
+                        <td>${registro.idade}</td>
+                        <td>${registro.numero}</td>
+                        <td>
+                            <button class="editar-btn" onclick="editarRegistros(${index})">Editar</button>
+                            <button class="excluir-btn" onclick="excluirRegistros(${index})">Excluir</button>
+                        </td>
+                    </tr>
+                `).join('')}
+            </tbody>
+        </table>
     `;
 }
 
@@ -55,10 +71,11 @@ function exibirRegistros() {
 function editarRegistros(index) {
     const registro = registros[index];
     document.getElementById('nome').value = registro.nome;
-    document.getElementById('email').value = registro.email;
+  
     document.getElementById('esporte').value = registro.esporte;
     document.getElementById('mostro').value = registro.mostro;
     document.getElementById('idade').value = registro.idade;
+    document.getElementById('numero').value= registro.numero;
     registros.splice(index, 1); // Remove o registro para evitar duplicação ao salvar
     exibirRegistros();
 }
@@ -70,4 +87,4 @@ function excluirRegistros(index) {
 }
 
 // Event listener para o botão de envio
-document.querySelector("button").addEventListener("click", cadastrarMostro);
+document.getElementById("btn").addEventListener("click", cadastrarMostro);

@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.transparente {
+   color: aliceblue;
+    background-color: rgba(14, 13, 13, 0.5);
+   
+  
+  }
+
+body{
+    background: url('../img/image.png') center center no-repeat fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    
+    font-style: normal;
+  }
+  #final{
+  
+    background-color: #FF7900;
+    text-align: center;
+    width: 100%;
+}
+#pai{
+    display: flexbox;
+    column-gap: 2cap;
+    border-radius: 5px;
+}
+#bar{
+    display: flex;
+    
+    justify-content: center;
+}
+#volta{
+    display: flex;
+   justify-content: center;
+   align-items: center;
+    width: 30%;
+    cursor: pointer;
+    background-color: blue;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+#volta, a {
+    color: inherit; /* Herda a cor do texto ao redor */
+    text-decoration: none; /* Remove o sublinhado */
+}
+#volta:hover{
+    background-color: #0056b3;
+}
