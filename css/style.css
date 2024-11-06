@@ -191,3 +191,26 @@ td {
         padding: 6px;
     }
 }
+
+  
+  @media (max-width: 768px) {
+    .nav-list.active {
+      display: flex;
+      transform: translateX(0);
+    }
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Cor semitransparente */
+        display: none; /* Inicialmente escondido */
+        z-index: 999;
+      }
+  
+    /* Exibir o overlay quando o menu estiver ativo */
+    .overlay.active {
+      display: block;
+    }
+  }

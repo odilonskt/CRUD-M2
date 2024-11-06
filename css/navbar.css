@@ -1,118 +1,126 @@
+/* Definição de variáveis de cores para facilitar manutenção e consistência */
 :root{
-  --bg-color:#000000;
-  --primary-color: #0048AA;
-  
+  --bg-color: #000000; /* Cor de fundo principal (preto) */
+  --primary-color: #0048AA; /* Cor principal para o header e outros detalhes */
 }
 
+/* Estilo para o header (barra de navegação) */
 header{
-  background-color: var(--primary-color);
-  padding: 10px 20px;
-  color: white;
+  background-color: var(--primary-color); /* Fundo com a cor definida */
+  padding: 10px 20px; /* Espaçamento interno (padding) */
+  color: white; /* Cor do texto do header */
 }
 
+/* Estilo para o elemento nav (barra de navegação) */
 nav{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: flex; /* Usando Flexbox para posicionamento */
+  justify-content: space-between; /* Espaço entre os itens (logo e menu) */
+  align-items: center; /* Alinhamento vertical central dos itens */
 }
- 
+
+/* Estilo para o logo */
 nav .logo{
-  font-size: 24px;
-  font-weight: bold;
-  color: white;
-  text-decoration: none;
+  font-size: 24px; /* Tamanho da fonte */
+  font-weight: bold; /* Peso da fonte */
+  color: white; /* Cor do texto */
+  text-decoration: none; /* Remover sublinhado */
 }
 
+/* Estilo para a lista de navegação */
 .nav-list{
-  list-style: none;
-  display: flex;
-  gap: 20px;
+  list-style: none; /* Remover marcadores de lista */
+  display: flex; /* Usando Flexbox para exibir os itens da lista horizontalmente */
+  gap: 20px; /* Espaçamento entre os itens */
 }
 
+/* Estilo para os links dentro da lista de navegação */
 .nav-list li a{
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 500;
-  transition: color 0.3s ease;
+  color: white; /* Cor do texto dos links */
+  text-decoration: none; /* Remover sublinhado */
+  font-size: 16px; /* Tamanho da fonte */
+  font-weight: 500; /* Peso da fonte */
+  transition: color 0.3s ease; /* Transição suave para mudanças de cor */
 }
 
+/* Estilo para os links quando são passados com o mouse (hover) */
 .nav-list li a:hover{
-  color: #f0f0f0;
+  color: #f0f0f0; /* Cor de destaque ao passar o mouse */
 }
+
+/* Estilo para o botão de menu móvel (hamburguer) */
 .mobile-menu{
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
+  display: none; /* Inicialmente escondido */
+  flex-direction: column; /* Layout vertical para as linhas do menu */
+  cursor: pointer; /* Alteração do cursor para indicar interação */
 }
+
+/* Estilo para as linhas do hambúrguer */
 .mobile-menu div{
-  width: 25px;
-  height: 3px;
-  margin: 5px;
-  transition: all 0.3s ease;
+  width: 25px; /* Largura das linhas */
+  height: 3px; /* Altura das linhas */
+  margin: 5px; /* Margem entre as linhas */
+  transition: all 0.3s ease; /* Transição suave para a animação */
 }
 
-.mobile-menu {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-}
-
+/* Definindo a aparência das linhas do hambúrguer */
 .mobile-menu .line1, .mobile-menu .line2, .mobile-menu .line3 {
-  width: 25px;
-  height: 3px;
-  background-color: white;
-  margin: 4px;
-  transition: all 0.3s ease;
+  width: 25px; /* Largura das linhas */
+  height: 3px; /* Altura das linhas */
+  background-color: white; /* Cor das linhas */
+  margin: 4px; /* Margem entre as linhas */
+  transition: all 0.3s ease; /* Transição suave para animação */
 }
 
-
+/* Estilos responsivos para telas menores (até 768px de largura) */
 @media (max-width: 768px) {
+  
+  /* Estilo para o menu de navegação em telas menores */
   .nav-list {
-      position: absolute;
-      top: 60px;
-      right: 0;
-      width: 100%;
-      height: calc(100vh - 60px);
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background-color: var(--primary-color);
-      transform: translateX(100%);
-      transition: transform 0.3s ease-in-out;
-      display: none;
+      position: absolute; /* Posicionamento absoluto para que o menu sobreponha o conteúdo */
+      top: 60px; /* Distância do topo */
+      right: 0; /* Alinhamento à direita */
+      width: 100%; /* Largura total */
+      height: calc(100vh - 60px); /* Altura total, considerando a altura do header */
+      flex-direction: column; /* Layout vertical para o menu */
+      align-items: center; /* Alinha os itens verticalmente no centro */
+      justify-content: center; /* Centraliza os itens verticalmente */
+      background-color: var(--primary-color); /* Cor de fundo */
+      transform: translateX(100%); /* Inicialmente escondido à direita */
+      transition: transform 0.3s ease-in-out; /* Transição suave para aparecer/desaparecer */
+      display: none; /* Inicialmente escondido */
   }
 
+  /* Exibindo o menu quando a classe 'active' for adicionada */
   .nav-list.active {
-      display: flex;
-      transform: translateX(0);
+      display: flex; /* Torna o menu visível */
+      transform: translateX(0); /* Posiciona o menu na tela */
   }
 
+  /* Estilos para o botão de menu móvel (hambúrguer) */
   .mobile-menu {
-      display: flex;
+      display: flex; /* Torna o botão visível em telas pequenas */
   }
 
+  /* Animação para as linhas do hambúrguer quando o menu estiver ativo */
   .mobile-menu.active .line1 {
-      transform: rotate(45deg) translate(5px, 5px);
+      transform: rotate(45deg) translate(5px, 5px); /* Rotaciona a primeira linha */
   }
 
   .mobile-menu.active .line2 {
-      opacity: 0;
+      opacity: 0; /* Torna a segunda linha invisível */
   }
 
   .mobile-menu.active .line3 {
-      transform: rotate(-45deg) translate(5px, -5px);
+      transform: rotate(-45deg) translate(5px, -5px); /* Rotaciona a terceira linha */
   }
+
+  /* Estilos adicionais para telas ainda menores (até 375px de largura) */
   @media (max-width: 375px) {
     .nav-list li a {
-        font-size: 14px; 
-        /* Reduz o tamanho da fonte */
+        font-size: 14px; /* Reduz o tamanho da fonte dos links */
     }
     .logo {
-        font-size: 20px; 
-        /* Reduz o tamanho da logo */
+        font-size: 20px; /* Reduz o tamanho da logo */
     }
-
-    
   }
 }
