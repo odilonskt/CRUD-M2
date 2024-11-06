@@ -167,3 +167,27 @@ td {
   padding: 5px;
   outline: 0;}
 
+  @media (max-width: 480px) {
+    .title {
+        font-size: 24px;
+    }
+    
+    .excluir-btn, .editar-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+    
+    .container button {
+        width: 100%;
+        height: 40px;
+    }
+    
+    .inputbox input {
+        font-size: 16px;
+    }
+    
+    table, th, td {
+        font-size: 12px;
+        padding: 6px;
+    }
+}
